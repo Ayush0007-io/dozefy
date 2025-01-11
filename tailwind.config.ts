@@ -59,6 +59,8 @@ export default {
         "fade-up": "fadeUp 0.5s ease-out forwards",
         "fade-down": "fadeDown 0.5s ease-out forwards",
         "fade-in": "fadeIn 0.5s ease-out forwards",
+        "float": "float 6s ease-in-out infinite",
+        "shine": "shine 3s ease-in-out infinite",
       },
       keyframes: {
         fadeUp: {
@@ -72,6 +74,14 @@ export default {
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        shine: {
+          "0%": { transform: "translateX(-100%)" },
+          "50%, 100%": { transform: "translateX(100%)" },
         },
       },
       borderRadius: {

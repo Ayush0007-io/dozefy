@@ -88,7 +88,29 @@
     @apply border-[hsl(var(--border))];
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    @apply overflow-x-hidden;
   }
+
+  body {
+    @apply bg-[#17124B] text-foreground overflow-x-hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+  }
+}
+
+/* Glass effect utility class */
+.glass-effect {
+  @apply backdrop-blur-lg bg-white/5 border border-white/10;
 }
