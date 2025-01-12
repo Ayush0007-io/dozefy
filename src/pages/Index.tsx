@@ -31,7 +31,7 @@ const Index = () => {
         
         {/* Animated gradient orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purpleMain/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purpleMain/20 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       {/* Content wrapper with initial animation */}
@@ -59,4 +59,5 @@ const Index = () => {
   );
 };
 
+// Make sure to export the component as default
 export default Index;
