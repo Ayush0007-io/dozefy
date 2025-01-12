@@ -32,10 +32,6 @@ export default {
           DEFAULT: "#F1F0FB",
           foreground: "hsl(var(--secondary-foreground))",
         },
-        accent: {
-          DEFAULT: "#00FF00",
-          foreground: "hsl(var(--accent-foreground))",
-        },
         neonSilver: "#C8C8C9",
         purpleMain: "#9B7EBD",
       },
