@@ -31,7 +31,7 @@ const features = [
 export const Features = () => {
   return (
     <section className="py-32 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(155,135,245,0.1)_0%,transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(142,68,173,0.1)_0%,transparent_50%)]" />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <motion.span
