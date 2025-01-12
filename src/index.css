@@ -29,7 +29,7 @@
   }
 
   * {
-    @apply border-border font-['Space_Grotesk'];
+    @apply border-border font-courier;
   }
 
   html {
@@ -37,7 +37,11 @@
   }
 
   body {
-    @apply bg-[#000000] text-neonSilver overflow-x-hidden;
+    @apply bg-[#000000] text-warmGray overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-courier font-bold text-white tracking-tight;
   }
 
   /* Custom scrollbar */
@@ -79,6 +83,7 @@
 /* Gradient text effect */
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-purpleMain to-neonSilver;
+  text-shadow: 0 0 2px rgba(155, 126, 189, 0.3);
 }
 
 /* Neon glow effects */
@@ -118,4 +123,15 @@
 
 .service-card:hover::before {
   @apply opacity-100;
+}
+
+/* Responsive spacing utilities */
+@layer utilities {
+  .section-spacing {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+  
+  .content-spacing {
+    @apply space-y-6 md:space-y-8 lg:space-y-12;
+  }
 }
