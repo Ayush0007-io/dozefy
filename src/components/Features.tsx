@@ -1,30 +1,30 @@
 import { motion } from "framer-motion";
-import { Zap, Rocket, Shield, Sparkles } from "lucide-react";
+import { Stethoscope, Video, Hospital, FileText, Ambulance, Brain } from "lucide-react";
 
 const features = [
   {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Build and deploy your AI startup in minutes, not months.",
-    gradient: "from-blue-500/20 to-purple-500/20"
+    icon: Brain,
+    title: "AI Symptom Checker",
+    description: "Advanced AI-powered symptom analysis with integrated video consultation capabilities.",
+    gradient: "from-purple-500/20 to-blue-500/20"
   },
   {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "Bank-grade security to keep your data safe and sound.",
-    gradient: "from-green-500/20 to-emerald-500/20"
+    icon: Hospital,
+    title: "Unified Healthcare Network",
+    description: "Seamlessly book appointments across our network of hospitals and clinics.",
+    gradient: "from-blue-500/20 to-cyan-500/20"
   },
   {
-    icon: Rocket,
-    title: "Scale Instantly",
-    description: "Built to scale with your growing user base from day one.",
-    gradient: "from-orange-500/20 to-red-500/20"
+    icon: FileText,
+    title: "Medical Reports",
+    description: "Access and manage all your medical records in one secure platform.",
+    gradient: "from-emerald-500/20 to-green-500/20"
   },
   {
-    icon: Sparkles,
-    title: "AI-Powered",
-    description: "Leverage cutting-edge AI to automate and optimize.",
-    gradient: "from-purple-500/20 to-pink-500/20"
+    icon: Ambulance,
+    title: "Emergency Care",
+    description: "24/7 emergency response system with real-time ambulance tracking.",
+    gradient: "from-red-500/20 to-orange-500/20"
   },
 ];
 
@@ -37,17 +37,27 @@ export const Features = () => {
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="px-4 py-2 bg-white shadow-sm rounded-full text-sm font-medium inline-block text-primary mb-6"
+            className="px-4 py-2 glass-effect rounded-full text-sm font-medium inline-block text-primary mb-6"
           >
             Features
           </motion.span>
-          <h2 className="text-4xl font-bold text-textPrimary mb-4">
-            Everything you need to succeed
-          </h2>
-          <p className="text-xl text-textSecondary">
-            Powerful features to help you build faster
-          </p>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
+          >
+            Advanced Healthcare Solutions
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-gray-400"
+          >
+            Next-generation healthcare at your fingertips
+          </motion.p>
         </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <motion.div
@@ -55,17 +65,23 @@ export const Features = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="group relative"
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              className="group perspective"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl`} />
-              <div className="relative bg-white/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="bg-white p-3 rounded-xl inline-block mb-4 shadow-sm">
-                  <feature.icon className="w-6 h-6 text-primary" />
+              <div className="relative transform transition-all duration-1000 preserve-3d hover:rotate-y-180">
+                <div className="glass-effect p-8 rounded-2xl border border-white/10 shadow-lg backdrop-blur-xl">
+                  <motion.div 
+                    className="bg-gradient-to-br from-white/10 to-white/5 p-4 rounded-xl inline-block mb-4"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <feature.icon className="w-8 h-8 text-primary" />
+                  </motion.div>
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400">{feature.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-textPrimary mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-textSecondary">{feature.description}</p>
               </div>
             </motion.div>
           ))}

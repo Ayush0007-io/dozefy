@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
-import { Pricing } from "@/components/Pricing";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { useEffect, useState } from "react";
@@ -30,6 +29,22 @@ const Index = () => {
         {/* Animated gradient orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        
+        {/* Floating particles */}
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${Math.random() * 10 + 5}px`,
+              height: `${Math.random() * 10 + 5}px`,
+              backgroundColor: `rgba(155, 135, 245, ${Math.random() * 0.3})`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          />
+        ))}
       </div>
 
       {/* Content wrapper with initial animation */}
@@ -46,7 +61,6 @@ const Index = () => {
           {/* Main content */}
           <Hero />
           <Features />
-          <Pricing />
           <FAQ />
           <Footer />
         </div>
