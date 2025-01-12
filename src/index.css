@@ -78,7 +78,7 @@
 
 /* Gradient text effect */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-purpleMain to-accent;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purpleMain to-neonSilver;
 }
 
 /* Neon glow effects */
@@ -113,7 +113,7 @@
 .service-card::before {
   content: '';
   @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-  background: linear-gradient(45deg, rgba(155, 126, 189, 0.2), rgba(0, 255, 0, 0.1));
+  background: linear-gradient(45deg, rgba(155, 126, 189, 0.2), rgba(155, 126, 189, 0.1));
 }
 
 .service-card:hover::before {
