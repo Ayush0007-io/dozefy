@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
+import { Benefits } from "@/components/Benefits";
+import { Reviews } from "@/components/Reviews";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -24,12 +26,12 @@ const Index = () => {
         />
         
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#8E44AD]/50 to-[#000000]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(142,68,173,0.1)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purpleMain/20 to-[#000000]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(155,126,189,0.1)_0%,transparent_50%)]" />
         
         {/* Animated gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purpleMain/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       {/* Content wrapper with initial animation */}
@@ -47,6 +49,8 @@ const Index = () => {
           {/* Main content */}
           <Hero />
           <Features />
+          <Benefits />
+          <Reviews />
           <FAQ />
           <Footer />
         </div>

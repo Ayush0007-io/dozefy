@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,37 +8,28 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-
     --radius: 0.5rem;
   }
 
   * {
-    @apply border-[hsl(var(--border))];
+    @apply border-border font-['Space_Grotesk'];
   }
 
   html {
@@ -44,7 +37,7 @@
   }
 
   body {
-    @apply bg-[#000000] text-foreground overflow-x-hidden;
+    @apply bg-[#000000] text-neonSilver overflow-x-hidden;
   }
 
   /* Custom scrollbar */
@@ -57,7 +50,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+    @apply bg-purpleMain/20 rounded-full hover:bg-purpleMain/40 transition-colors;
   }
 }
 
@@ -85,18 +78,44 @@
 
 /* Gradient text effect */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#8E44AD] to-[#00FF00];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purpleMain to-accent;
 }
 
 /* Neon glow effects */
 .neon-glow {
-  text-shadow: 0 0 10px rgba(142, 68, 173, 0.8),
-               0 0 20px rgba(142, 68, 173, 0.8),
-               0 0 30px rgba(142, 68, 173, 0.8);
+  text-shadow: 0 0 10px rgba(155, 126, 189, 0.8),
+               0 0 20px rgba(155, 126, 189, 0.8),
+               0 0 30px rgba(155, 126, 189, 0.8);
 }
 
 /* Particle animation */
 .particle {
   @apply absolute rounded-full opacity-50;
   animation: particleFloat 10s infinite linear;
+}
+
+/* 3D Card effect */
+.card-3d {
+  @apply transition-transform duration-500 hover:scale-105 hover:shadow-xl;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Service card hover effect */
+.service-card {
+  @apply relative overflow-hidden transition-all duration-300;
+  background: linear-gradient(45deg, rgba(155, 126, 189, 0.1), rgba(0, 0, 0, 0.2));
+}
+
+.service-card::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+  background: linear-gradient(45deg, rgba(155, 126, 189, 0.2), rgba(0, 255, 0, 0.1));
+}
+
+.service-card:hover::before {
+  @apply opacity-100;
 }
