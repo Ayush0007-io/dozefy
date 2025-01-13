@@ -69,20 +69,19 @@
 
 /* Glass effect utility class */
 .glass-effect {
-  @apply backdrop-blur-lg bg-white/5 border border-white/10;
+  @apply backdrop-blur-lg bg-white/5;
 }
 
 /* Gradient text effect */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-purpleMain to-neonSilver;
-  text-shadow: 0 0 2px rgba(155, 126, 189, 0.3);
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-lavenderBlue to-lavenderPurple;
 }
 
 /* Neon glow effects */
 .neon-glow {
-  text-shadow: 0 0 10px rgba(155, 126, 189, 0.8),
-               0 0 20px rgba(155, 126, 189, 0.8),
-               0 0 30px rgba(155, 126, 189, 0.8);
+  text-shadow: 0 0 10px rgba(211, 228, 253, 0.8),
+               0 0 20px rgba(211, 228, 253, 0.8),
+               0 0 30px rgba(211, 228, 253, 0.8);
 }
 
 /* Particle animation */
@@ -91,30 +90,14 @@
   animation: particleFloat 10s infinite linear;
 }
 
-/* 3D Card effect */
-.card-3d {
-  @apply transition-transform duration-500 hover:scale-105 hover:shadow-xl;
-  transform-style: preserve-3d;
-}
-
-.card-3d:hover {
-  transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
-}
-
 /* Service card hover effect */
 .service-card {
   @apply relative overflow-hidden transition-all duration-300;
-  background: linear-gradient(45deg, rgba(155, 126, 189, 0.1), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(45deg, rgba(211, 228, 253, 0.1), rgba(0, 0, 0, 0.2));
 }
 
-.service-card::before {
-  content: '';
-  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-  background: linear-gradient(45deg, rgba(155, 126, 189, 0.2), rgba(155, 126, 189, 0.1));
-}
-
-.service-card:hover::before {
-  @apply opacity-100;
+.service-card:hover {
+  @apply transform scale-105 shadow-lg;
 }
 
 /* Responsive spacing utilities */
