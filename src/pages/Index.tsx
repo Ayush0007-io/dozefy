@@ -27,7 +27,6 @@ const Index = () => {
         
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purpleMain/20 to-[#000000]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(155,126,189,0.1)_0%,transparent_50%)]" />
         
         {/* Animated gradient orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purpleMain/30 rounded-full blur-3xl animate-pulse" />
@@ -59,5 +58,4 @@ const Index = () => {
   );
 };
 
-// Make sure to export the component as default
 export default Index;
