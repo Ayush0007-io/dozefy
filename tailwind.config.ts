@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        courier: ["Courier New", "monospace"],
+        quicksand: ["Quicksand", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -35,6 +35,9 @@ export default {
           DEFAULT: "#F1F0FB",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        oilBlack: "#000000",
+        lavenderBlue: "#D3E4FD",
+        lavenderPurple: "#D6BCFA",
         neonSilver: "#C8C8C9",
         purpleMain: "#9B7EBD",
         warmGray: "#9F9F9F",
@@ -48,6 +51,10 @@ export default {
       spacing: {
         'section': '8rem',
         'header': '6rem',
+      },
+      boxShadow: {
+        'card': '0 4px 10px rgba(0, 0, 0, 0.08)',
+        'modal': '0 15px 30px rgba(0, 0, 0, 0.15)',
       },
     },
   },
