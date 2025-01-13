@@ -6,53 +6,34 @@ import { Reviews } from "@/components/Reviews";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { useEffect, useState } from "react";
 
 const Index = () => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#000000]">
-      {/* Background Elements */}
       <div className="fixed inset-0 z-0">
-        {/* Base mesh background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: "url('/bg-mesh.png')" }}
-        />
-        
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purpleMain/20 to-[#000000]" />
+        {/* Base gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#000000] via-secondary to-[#000000]" />
         
         {/* Animated gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purpleMain/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purpleMain/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purpleMain/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-lavenderBlue/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      {/* Content wrapper with initial animation */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
         className="relative z-10"
       >
         <Header />
-        <div className="relative">
-          {/* Shine effect overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shine" />
-          
-          {/* Main content */}
+        <main className="relative">
           <Hero />
           <Features />
           <Benefits />
           <Reviews />
           <FAQ />
           <Footer />
-        </div>
+        </main>
       </motion.div>
     </div>
   );

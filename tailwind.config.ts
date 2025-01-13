@@ -32,7 +32,7 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#F1F0FB",
+          DEFAULT: "#1a1a1a",
           foreground: "hsl(var(--secondary-foreground))",
         },
         oilBlack: "#000000",
@@ -43,18 +43,18 @@ export default {
         warmGray: "#9F9F9F",
       },
       fontSize: {
-        'body': ['1.125rem', '1.75'],  // 18px with 1.75 line height
-        'h1': ['2.5rem', '1.2'],       // 40px
-        'h2': ['2rem', '1.3'],         // 32px
-        'h3': ['1.5rem', '1.4'],       // 24px
+        'body': ['1.125rem', '1.75'],
+        'h1': ['3.5rem', '1.2'],
+        'h2': ['2.5rem', '1.3'],
+        'h3': ['2rem', '1.4'],
       },
       spacing: {
-        'section': '8rem',
+        'section': '10rem',
         'header': '6rem',
       },
       boxShadow: {
-        'card': '0 4px 10px rgba(0, 0, 0, 0.08)',
-        'modal': '0 15px 30px rgba(0, 0, 0, 0.15)',
+        'card': '0 4px 20px rgba(0, 0, 0, 0.15)',
+        'modal': '0 15px 30px rgba(0, 0, 0, 0.25)',
       },
     },
   },
