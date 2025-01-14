@@ -58,6 +58,31 @@
   }
 }
 
+@layer components {
+  .perspective {
+    perspective: 2000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .scroll-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-out;
+  }
+
+  .scroll-section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
 .glass-effect {
   @apply backdrop-blur-lg bg-white/5 border border-white/10;
 }
