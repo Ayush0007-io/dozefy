@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState, useEffect } from "react";
 
@@ -14,6 +14,25 @@ export const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const menuVariants = {
+    open: {
+      opacity: 1,
+      height: "auto",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+    closed: {
+      opacity: 0,
+      height: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  };
 
   return (
     <motion.header
@@ -33,6 +52,7 @@ export const Header = () => {
             Dozefy
           </motion.div>
 
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
             {["Services", "Dashboard", "About Us", "Contact Us"].map((item) => (
               <Button
@@ -45,7 +65,8 @@ export const Header = () => {
             ))}
           </nav>
 
-          <div className="flex items-center space-x-4">
+          {/* Desktop Auth Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
             <Button
               variant="ghost"
               className="text-white hover:text-primary hover:bg-white/10"
@@ -57,37 +78,32 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
-            <div className="space-y-2">
-              <span className={`block w-8 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`}></span>
-              <span className={`block w-8 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`block w-8 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`}></span>
-            </div>
+            <Menu className="h-6 w-6 text-white" />
           </button>
         </div>
 
         {/* Mobile Menu */}
         <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{
-            height: isMobileMenuOpen ? "auto" : 0,
-            opacity: isMobileMenuOpen ? 1 : 0,
-          }}
-          className="md:hidden overflow-hidden bg-black/90 backdrop-blur-lg"
+          initial="closed"
+          animate={isMobileMenuOpen ? "open" : "closed"}
+          variants={menuVariants}
+          className="md:hidden overflow-hidden"
         >
-          <nav className="px-4 py-6 space-y-4">
+          <nav className="px-4 py-6 space-y-4 bg-black/90 backdrop-blur-lg rounded-lg mt-2">
             {["Services", "Dashboard", "About Us", "Contact Us"].map((item) => (
               <Button
                 key={item}
                 variant="ghost"
-                className="w-full text-white hover:text-primary hover:bg-white/10 transition-colors"
+                className="w-full text-white hover:text-primary hover:bg-white/10 transition-colors justify-start"
               >
                 {item}
               </Button>
             ))}
-            <div className="pt-4 space-y-4">
+            <div className="pt-4 space-y-4 border-t border-white/10">
               <Button
                 variant="ghost"
                 className="w-full text-white hover:text-primary hover:bg-white/10"
