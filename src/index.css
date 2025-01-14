@@ -83,6 +83,117 @@
   }
 }
 
+  .scroll-animation-wrapper {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .scrollbar {
+    width: 4px;
+    height: 100%;
+    background-color: theme('colors.white/10');
+    background-image: radial-gradient(
+      circle at 0% var(--scroll-y-position, -10%),
+      theme('colors.lavenderBlue') 0%,
+      theme('colors.lavenderBlue/80') 10px,
+      theme('colors.lavenderBlue/50') 20px,
+      transparent 40px
+    );
+    animation: on-scrolling both linear;
+    animation-timeline: scroll();
+    animation-range: 10vh;
+  }
+
+  .scroll-container {
+    width: 350px;
+    height: 100%;
+    background: linear-gradient(
+      132deg,
+      theme('colors.white/10') 0%,
+      theme('colors.white/5') 20%,
+      theme('colors.white/5') 70%,
+      theme('colors.white/2') 100%
+    );
+    border: solid theme('colors.white/10') 1px;
+    margin-left: 15px;
+    position: relative;
+  }
+
+  .scroll-container::before,
+  .scroll-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      theme('colors.lavenderBlue/75') 38%,
+      theme('colors.lavenderBlue') 51%,
+      theme('colors.lavenderBlue/75') 63%,
+      transparent 100%
+    );
+    background-repeat: no-repeat;
+    background-position-y: var(--reflection-y-position, -50%);
+    animation: on-scrolling both linear;
+    animation-timeline: scroll();
+    animation-range: 10vh;
+  }
+
+  .scroll-container::before {
+    background-size: 1px 150px;
+    @apply blur-sm;
+  }
+
+  .scroll-container::after {
+    background-size: 10px 150px;
+    @apply blur-lg;
+  }
+
+  .scroll-text {
+    @apply bg-gradient-to-r from-white/40 via-white/90 to-lavenderBlue;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 20px;
+    line-height: 1.5em;
+    opacity: var(--opacity, 0.1);
+    transform: translateY(calc(var(--text-offset, 10) * 1px));
+    animation: on-scrolling both linear;
+    animation-timeline: scroll();
+    animation-range: 10vh;
+  }
+}
+
+@keyframes on-scrolling {
+  0% {
+    --scroll-y-position: -10%;
+    --reflection-y-position: -22%;
+  }
+  25% {
+    --opacity-1: 1;
+    --text-offset-1: 0;
+  }
+  50% {
+    --scroll-y-position: 50%;
+    --reflection-y-position: 50%;
+    --opacity-2: 1;
+    --text-offset-2: 0;
+  }
+  75% {
+    --opacity-3: 1;
+    --text-offset-3: 0;
+  }
+  90% {
+    --opacity-4: 1;
+    --text-offset-4: 0;
+  }
+  100% {
+    --scroll-y-position: 105%;
+    --reflection-y-position: 115%;
+  }
+}
+
 .glass-effect {
   @apply backdrop-blur-lg bg-white/5 border border-white/10;
 }

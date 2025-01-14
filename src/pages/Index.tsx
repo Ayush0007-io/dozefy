@@ -7,6 +7,7 @@ import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ImageScroller } from "@/components/ImageScroller";
+import { ScrollAnimation } from "@/components/ScrollAnimation";
 
 const Index = () => {
   return (
@@ -29,6 +30,7 @@ const Index = () => {
           <Hero />
           <Features />
           <ImageScroller />
+          <ScrollAnimation />
           <Benefits />
           <Reviews />
           <FAQ />
