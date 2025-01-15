@@ -41,6 +41,7 @@ export default {
         periwinkle: "#b8c0ff",
         mintGreen: "#caffbf",
         skyBlue: "#72ddf7",
+        warmGray: "#9CA3AF", // Added warmGray color
       },
       fontSize: {
         'body': ['1.125rem', '1.75'],
