@@ -59,160 +59,26 @@
 }
 
 @layer components {
-  .perspective {
-    perspective: 2000px;
-  }
-
-  .preserve-3d {
-    transform-style: preserve-3d;
-  }
-
-  .scroll-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease-out;
-  }
-
-  .scroll-section.in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-
-  .scroll-animation-wrapper {
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .scrollbar {
-    width: 4px;
-    height: 100%;
-    background-color: theme('colors.white/10');
-    background-image: radial-gradient(
-      circle at 0% var(--scroll-y-position, -10%),
-      theme('colors.lavenderBlue') 0%,
-      theme('colors.lavenderBlue/80') 10px,
-      theme('colors.lavenderBlue/50') 20px,
-      transparent 40px
-    );
-    animation: on-scrolling both linear;
-    animation-timeline: scroll();
-    animation-range: 10vh;
-  }
-
-  .scroll-container {
-    width: 350px;
-    height: 100%;
-    background: linear-gradient(
-      132deg,
-      theme('colors.white/10') 0%,
-      theme('colors.white/5') 20%,
-      theme('colors.white/5') 70%,
-      theme('colors.white/2') 100%
-    );
-    border: solid theme('colors.white/10') 1px;
-    margin-left: 15px;
-    position: relative;
-  }
-
-  .scroll-container::before,
-  .scroll-container::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      transparent 0%,
-      theme('colors.lavenderBlue/75') 38%,
-      theme('colors.lavenderBlue') 51%,
-      theme('colors.lavenderBlue/75') 63%,
-      transparent 100%
-    );
-    background-repeat: no-repeat;
-    background-position-y: var(--reflection-y-position, -50%);
-    animation: on-scrolling both linear;
-    animation-timeline: scroll();
-    animation-range: 10vh;
-  }
-
-  .scroll-container::before {
-    background-size: 1px 150px;
-    @apply blur-sm;
-  }
-
-  .scroll-container::after {
-    background-size: 10px 150px;
-    @apply blur-lg;
-  }
-
-  .scroll-text {
-    @apply bg-gradient-to-r from-white/40 via-white/90 to-lavenderBlue;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    padding: 20px;
-    line-height: 1.5em;
-    opacity: var(--opacity, 0.1);
-    transform: translateY(calc(var(--text-offset, 10) * 1px));
-    animation: on-scrolling both linear;
-    animation-timeline: scroll();
-    animation-range: 10vh;
-  }
-
   .glass-effect {
     @apply backdrop-blur-lg bg-white/5 border border-white/10;
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-lavenderBlue to-lavenderPurple;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-lavender to-periwinkle;
   }
 
   .neon-glow {
-    text-shadow: 0 0 10px rgba(211, 228, 253, 0.8),
-                 0 0 20px rgba(211, 228, 253, 0.8),
-                 0 0 30px rgba(211, 228, 253, 0.8);
+    text-shadow: 0 0 10px rgba(231, 198, 255, 0.8),
+                 0 0 20px rgba(184, 192, 255, 0.8);
   }
 
   .service-card {
     @apply relative overflow-hidden transition-all duration-300;
-    background: linear-gradient(45deg, rgba(211, 228, 253, 0.1), rgba(0, 0, 0, 0.2));
+    background: linear-gradient(45deg, rgba(231, 198, 255, 0.1), rgba(0, 0, 0, 0.2));
   }
 
   .service-card:hover {
     @apply transform scale-105 shadow-lg;
-  }
-}
-
-@keyframes on-scrolling {
-  0% {
-    --scroll-y-position: -10%;
-    --reflection-y-position: -22%;
-  }
-  25% {
-    --opacity-1: 1;
-    --text-offset-1: 0;
-  }
-  50% {
-    --scroll-y-position: 50%;
-    --reflection-y-position: 50%;
-    --opacity-2: 1;
-    --text-offset-2: 0;
-  }
-  75% {
-    --opacity-3: 1;
-    --text-offset-3: 0;
-  }
-  90% {
-    --opacity-4: 1;
-    --text-offset-4: 0;
-  }
-  100% {
-    --scroll-y-position: 105%;
-    --reflection-y-position: 115%;
   }
 }
 

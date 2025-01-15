@@ -41,7 +41,10 @@ export default {
         periwinkle: "#b8c0ff",
         mintGreen: "#caffbf",
         skyBlue: "#72ddf7",
-        warmGray: "#9CA3AF", // Added warmGray color
+        warmGray: "#9CA3AF",
+        purpleMain: "#9b87f5", // Added purpleMain color
+        lavenderBlue: "#e7c6ff", // Added lavenderBlue color
+        lavenderPurple: "#b8c0ff", // Added lavenderPurple color
       },
       fontSize: {
         'body': ['1.125rem', '1.75'],
