@@ -47,7 +47,7 @@ export const Header = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-2xl font-bold gradient-text neon-glow"
+            className="text-2xl font-bold text-lavender hover:text-periwinkle transition-colors duration-300"
           >
             Dozefy
           </motion.div>
@@ -58,7 +58,7 @@ export const Header = () => {
               <Button
                 key={item}
                 variant="ghost"
-                className="text-white hover:text-primary hover:bg-white/10 transition-colors"
+                className="text-lavender hover:text-periwinkle hover:bg-white/5 transition-all duration-300 border border-transparent hover:border-lavender/20"
               >
                 {item}
               </Button>
@@ -69,11 +69,13 @@ export const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button
               variant="ghost"
-              className="text-white hover:text-primary hover:bg-white/10"
+              className="text-lavender hover:text-periwinkle hover:bg-white/5 transition-all duration-300 border border-transparent hover:border-lavender/20"
             >
               Login
             </Button>
-            <Button className="bg-primary hover:bg-primary/80">Register</Button>
+            <Button className="bg-lavender hover:bg-periwinkle text-black font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(184,192,255,0.3)]">
+              Register
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,7 +84,7 @@ export const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            <Menu className="h-6 w-6 text-white" />
+            <Menu className="h-6 w-6 text-lavender" />
           </button>
         </div>
 
@@ -93,24 +95,24 @@ export const Header = () => {
           variants={menuVariants}
           className="md:hidden overflow-hidden"
         >
-          <nav className="px-4 py-6 space-y-4 bg-black/90 backdrop-blur-lg rounded-lg mt-2">
+          <nav className="px-4 py-6 space-y-4 bg-black/90 backdrop-blur-lg rounded-lg mt-2 border border-lavender/10">
             {["Services", "Dashboard", "About Us", "Contact Us"].map((item) => (
               <Button
                 key={item}
                 variant="ghost"
-                className="w-full text-white hover:text-primary hover:bg-white/10 transition-colors justify-start"
+                className="w-full text-lavender hover:text-periwinkle hover:bg-white/5 transition-colors justify-start"
               >
                 {item}
               </Button>
             ))}
-            <div className="pt-4 space-y-4 border-t border-white/10">
+            <div className="pt-4 space-y-4 border-t border-lavender/10">
               <Button
                 variant="ghost"
-                className="w-full text-white hover:text-primary hover:bg-white/10"
+                className="w-full text-lavender hover:text-periwinkle hover:bg-white/5"
               >
                 Login
               </Button>
-              <Button className="w-full bg-primary hover:bg-primary/80">
+              <Button className="w-full bg-lavender hover:bg-periwinkle text-black font-semibold">
                 Register
               </Button>
             </div>
